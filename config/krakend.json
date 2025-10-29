@@ -7,6 +7,36 @@
   "port": 8080,
   "endpoints": [
     {
+      "endpoint": "/store-api/orders",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/orders",
+          "host": [
+            "http://store_manager:5000"
+          ]
+        }
+      ],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 10,
+          "every": "1m"
+        }
+      }
+    },
+    {
+      "endpoint": "/store-api/orders",
+      "method": "PUT",
+      "backend": [
+        {
+          "url_pattern": "/orders",
+          "host": [
+            "http://store_manager:5000"
+          ]
+        }
+      ]
+    },
+    {
       "endpoint": "/payments-api/payments",
       "method": "POST", 
       "backend": [
