@@ -13,10 +13,12 @@ def get_user_by_id(user_id):
     result = session.query(User).filter_by(id=user_id).all()
 
     if len(result):
+        user = result[0]
         return {
-            'id': result[0].id,
-            'name': result[0].name,
-            'email': result[0].email
+            'id': user.id,
+            'name': user.name,
+            'email': user.email,
+            'user_type_id': user.user_type_id
         }
     else:
         return {}

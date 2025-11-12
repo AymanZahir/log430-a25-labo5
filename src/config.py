@@ -18,3 +18,7 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 REDIS_HOST = os.getenv("REDIS_HOST")
 REDIS_PORT = int(os.getenv("REDIS_PORT"))
 REDIS_DB = int(os.getenv("REDIS_DB"))
+
+KAFKA_HOST = os.getenv("KAFKA_HOST")
+KAFKA_TOPIC = os.getenv("KAFKA_TOPIC")
+KAFKA_ENABLED = os.getenv("KAFKA_ENABLED", "true").lower() == "true"
